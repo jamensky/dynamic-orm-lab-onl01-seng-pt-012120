@@ -52,7 +52,7 @@ class InteractiveRecord
   end
 
   def self.find_by(att)
-    test2 = DB[:conn].execute("SELECT * FROM #{table_name} WHERE #{att.to_a[0][0].to_s}  = #{att.to_a[0][1]}")
+    test2 = DB[:conn].execute("SELECT * FROM #{table_name} WHERE ?", att)#{att.to_a[0][0].to_s}  = #{att.to_a[0][1]}")
     binding.pry
   end
 
